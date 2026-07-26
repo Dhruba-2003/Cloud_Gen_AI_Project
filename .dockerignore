@@ -1,0 +1,16 @@
+# Never bake secrets into the image - the container gets its GROQ_API_KEY
+# from an environment variable at run time instead (see `docker run -e ...`).
+.env
+.env.example
+
+# Python cache / virtual environment - not needed inside the container,
+# and including them would just bloat the image or cause conflicts.
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Editor/OS clutter
+.vscode/
+.git/
+.gitignore
